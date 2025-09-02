@@ -83,6 +83,3 @@ ai-knowledge-hub/
 docker compose run --rm backend pytest -q
 ```
 
-## 🔐 Notes
-- This skeleton is secure-by-default (CORS whitelist, token guards) but OAuth is a placeholder.
-- Replace OAuth with Azure AD / Entra ID or Auth0 in production.
