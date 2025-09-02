@@ -1,0 +1,43 @@
+services:
+  qdrant:
+    image: qdrant/qdrant:latest
+    ports: ["6333:6333"]
+    volumes:
+      - qdrant_data:/qdrant/storage
+
+  backend:
+    build: ./backend
+    env_file:
+      - ./.env.example
+      - ./backend/.env
+    volumes:
+      - ./backend:/app
+      - ./data/uploads:/app/data/uploads
+    depends_on: [qdrant]
+    ports: ["8000:8000"]
+
+  frontend:
+    build: ./frontend
+    env_file:
+      - ./.env.example
+      - ./frontend/.env.local
+    depends_on: [backend]
+    ports: ["3000:3000"]
+    command: ["npm", "start"]
+    profiles: ["prod"]
+
+  frontend-dev:
+    build: ./frontend
+    env_file:
+      - ./.env.example
+      - ./frontend/.env.local
+    volumes:
+      - ./frontend:/app
+      - /app/node_modules
+    depends_on: [backend]
+    ports: ["3000:3000"]
+    command: ["npm", "run", "dev"]
+    profiles: ["dev"]
+
+volumes:
+  qdrant_data:

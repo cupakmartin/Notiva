@@ -1,0 +1,68 @@
+# -------------------------
+# Node.js / Next.js frontend
+# -------------------------
+frontend/node_modules/
+frontend/.next/
+frontend/out/
+frontend/.turbo/
+frontend/.vercel/
+frontend/.env.local
+frontend/.env.development.local
+frontend/.env.test.local
+frontend/.env.production.local
+
+# -------------------------
+# Python / FastAPI backend
+# -------------------------
+backend/__pycache__/
+backend/*.py[cod]
+backend/*.pyo
+backend/*.pyd
+backend/.Python
+backend/env/
+backend/venv/
+backend/.venv/
+backend/ENV/
+backend/env.bak/
+backend/venv.bak/
+backend/.mypy_cache/
+backend/.pytest_cache/
+backend/.coverage
+backend/.coverage.*
+backend/.hypothesis/
+backend/.env
+backend/.env.*
+
+# -------------------------
+# Common / system files
+# -------------------------
+*.log
+*.pid
+*.seed
+*.swp
+*.swo
+*.DS_Store
+Thumbs.db
+
+# -------------------------
+# Docker / data
+# -------------------------
+data/
+*.db
+*.sqlite3
+*.sqlite
+*.tar
+*.gz
+
+# -------------------------
+# VSCode / IDE
+# -------------------------
+.vscode/
+.idea/
+*.iml
+
+# -------------------------
+# Python virtualenv at root
+# -------------------------
+venv/
+.venv/
